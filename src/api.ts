@@ -24,9 +24,8 @@ export async function fetchExtensionConfigs(): Promise<{
   chatgpt_webapp_model_name: string
   openai_model_names: string[]
 }> {
-  return fetch(`${API_HOST}/api/config`, {
-    headers: {
-      'x-version': getExtensionVersion(),
-    },
-  }).then((r) => r.json())
+  return {
+    chatgpt_webapp_model_name: 'text-davinci-002-render',
+    openai_model_names: ['gpt-3.5-turbo'],
+  }
 }
